@@ -1,3 +1,4 @@
+![ASURO Library made by Gabyfle](https://github.com/Gabyfle/Asuro/blob/master/asuro_banner.png)
 # Asuro library
 A tiny C library to program the ATMega8L chipped on ASURO.
 
