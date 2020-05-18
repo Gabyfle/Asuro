@@ -1,0 +1,6 @@
+.pio
+CMakeListsPrivate.txt
+cmake-build-*/ 
+/.idea/Asuro.iml
+/.idea/inspectionProfiles/Project_Default.xml
+*.xml
