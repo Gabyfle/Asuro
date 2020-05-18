@@ -15,12 +15,38 @@
  *  limitations under the License.
  */
 
+#include <avr/io.h>
+#include "led.h"
+
 /**
  * Sets the LEDs of ASURO to their respective states
- * @param states char: formatted LEDs states
+ * @param states unsigned char: formatted LEDs states
  */
-void setLed(char states)
+void setLed(unsigned char states)
 {
-    // TODO
-    return;
+    /* Front LED */
+    if ((ASURO_LED_INTERNAL_STATE_FRONT ^ states) > ASURO_LED_INTERNAL_STATE_FRONT)
+        PORTD |= (1 << PD6);
+    else
+        PORTD &= ~(1 << PD6);
+    /* Status LED Red */
+    if ((ASURO_LED_INTERNAL_STATE_STATUS_RED ^ states) > ASURO_LED_INTERNAL_STATE_STATUS_RED)
+        PORTD |=  (1 << PD2);
+    else
+        PORTD &= ~(1 << PD2);
+    /* Status LED Green */
+    if ((ASURO_LED_INTERNAL_STATE_STATUS_GREEN ^ states) > ASURO_LED_INTERNAL_STATE_STATUS_GREEN)
+        PORTB |=  (1 << PB0);
+    else
+        PORTB &= ~(1 << PB0);
+    /* Back LED Left */
+    if ((ASURO_LED_INTERNAL_STATE_BACK_LEFT ^ states) > ASURO_LED_INTERNAL_STATE_BACK_LEFT)
+        PORTC |= (1 << PC0) | (1 << PC1);
+    else
+        PORTB &= ~(1 << PB0);
+    /* Back LED Right */
+    if ((ASURO_LED_INTERNAL_STATE_BACK_RIGHT ^ states) > ASURO_LED_INTERNAL_STATE_BACK_RIGHT)
+        PORTB |=  (1 << PB0);
+    else
+        PORTC &= ~(1 << PC0);
 }
