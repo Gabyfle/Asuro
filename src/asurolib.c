@@ -22,5 +22,5 @@
  * This has to be called before any program startup
  */
 void init(void) {
-
+    // TODO
 }

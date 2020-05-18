@@ -14,3 +14,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
+/**
+ * Sets the LEDs of ASURO to their respective states
+ * @param states char: formatted LEDs states
+ */
+void setLed(char states)
+{
+    // TODO
+    return;
+}

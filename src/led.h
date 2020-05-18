@@ -17,6 +17,20 @@
 #ifndef ASURO_LED_H
 #define ASURO_LED_H
 
-#define FRONT_LED
+    /** LEDs states **/
+    #define ASURO_LED_INTERNAL_STATE_FRONT 16
+    #define ASURO_LED_INTERNAL_STATE_STATUS_RED 2
+    #define ASURO_LED_INTERNAL_STATE_STATUS_GREEN 1
+    #define ASURO_LED_INTERNAL_STATE_BACK_RIGHT 8
+    #define ASURO_LED_INTERNAL_STATE_BACK_LEFT 4
+
+    /** LEDs state formatter **/
+    #define LED_STATE(f, br, bl, sr, sg) f * 16 + br * 8 + bl * 4 + sr * 2 + sg
+
+    /**
+     * Sets the LEDs of ASURO to their respective states
+     * @param states char: formatted LEDs states
+     */
+    void setLed(char states);
 
 #endif //ASURO_LED_H

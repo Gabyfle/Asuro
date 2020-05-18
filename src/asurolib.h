@@ -15,29 +15,28 @@
  */
 
 #ifndef ASURO_ASUROLIB_H
-#define ASURO_ASUROLIB_H
+    #define ASURO_ASUROLIB_H
 
-/** Asuro library constants **/
+    /** Asuro library constants **/
 
-/* Boolean values */
-#define  false    0
-#define  true    1
+    /* Boolean values */
+    #define  false    0
+    #define  true    1
 
-/* State values */
-#define  OFF    0
-#define  ON     1
+    /* State values */
+    #define  OFF    0
+    #define  ON     1
 
-/** Asuro library functions **/
+    /** Asuro library functions **/
 
-/*
- * Initialization function
- * This has to be called before any program startup
- */
-void init(void);
+    /*
+     * Initialization function
+     * This has to be called before any program startup
+     */
+    void init(void);
 
-
-#ifdef ASUROLIB_LEDS
-/** Asuro LED functions **/
-#include "led.h"
-#endif
+    #ifdef ASUROLIB_LEDS
+        /** Asuro LED functions **/
+        #include "led.h"
+    #endif
 #endif //ASURO_ASUROLIB_H
