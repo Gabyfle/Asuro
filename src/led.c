@@ -24,6 +24,7 @@
  */
 void setLed(unsigned char states)
 {
+
     /* Front LED */
     if ((ASURO_LED_INTERNAL_STATE_FRONT ^ states) > ASURO_LED_INTERNAL_STATE_FRONT)
         PORTD |= (1 << PD6);
@@ -49,4 +50,15 @@ void setLed(unsigned char states)
         PORTB |=  (1 << PB0);
     else
         PORTC &= ~(1 << PC0);
+}
+
+/**
+ * Makes the LEDs blink during a certain amount of time
+ * @param states unsigned char: formatted LEDs states
+ * @param time double: blink duration
+ * @return unsigned int:
+ */
+void blinkLed(unsigned char states, double time, )
+{
+    // TODO
 }

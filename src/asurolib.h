@@ -35,6 +35,12 @@
      */
     void init(void);
 
+    /**
+     * Returns the clock time
+     * @return unsigned int
+     */
+    unsigned int clock(void);
+
     #ifdef ASUROLIB_LEDS
         /** Asuro LED functions **/
         #include "led.h"

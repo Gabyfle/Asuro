@@ -32,5 +32,7 @@
      * @param states unsigned char: formatted LEDs states
      */
     void setLed(unsigned char states);
-
+    /**
+     * blinkLed
+     */
 #endif //ASURO_LED_H
