@@ -15,7 +15,7 @@ ASURO has a total of 5 LEDs. Here are available LEDs on ASURO:
 * Front (<span style="color=red !important;">RED</span>)
 * Back LEDs (<span style="color=red !important;">LEFT</span> and <span style="color=red !important;">RIGHT</span>)
 
-Example using Front LED:
+**Example 1**: turn on the Front LED:
 
 ```c
 #define ASUROLIB_LEDS // we'll be using the LED module from Asuro Library
@@ -50,6 +50,26 @@ Here is the order in which `LED_STATE` takes LEDs:
   4. `BACK_LEFT`
   5. `BACK_RIGHT`
 
+**Example 2:** make the LEDs blink during 5 seconds
+
+```c
+#define ASUROLIB_LEDS // we'll be using the LED module from Asuro Library
+
+#include "asurolib.h"
+
+int main(void)
+{
+    init(); // ASURO initialization
+    
+    blinkLed(
+        LED_STATE(ON, ON, ON, ON, ON), /* LEDs that have "ON" state will blink */
+        5000, /* 5k milliseconds which is exactly 5 seconds */
+        30 /* LEDs will blink 30 times during these 5 seconds */
+    );
+
+    return 0;
+}
+```
 
 ## Credits
 * A lot of ideas have been taken from: [Asuro](http://www.arexx.com/downloads/asuro/asuro_src.zip) by Jan Grewe
