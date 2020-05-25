@@ -2,6 +2,7 @@
  * Asuro development library
  * -- LEDs WORK FUNCTIONS
  * @author Gabriel Santamaria <gaby.santamaria@outlook.fr>
+ *
  * 18/05/2020
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +17,7 @@
  */
 
 #include <avr/io.h>
+#include <util/delay.h>
 #include "led.h"
 
 /**
@@ -24,7 +26,6 @@
  */
 void setLed(unsigned char states)
 {
-
     /* Front LED */
     if ((ASURO_LED_INTERNAL_STATE_FRONT ^ states) > ASURO_LED_INTERNAL_STATE_FRONT)
         PORTD |= (1 << PD6);
@@ -56,9 +57,17 @@ void setLed(unsigned char states)
  * Makes the LEDs blink during a certain amount of time
  * @param states unsigned char: formatted LEDs states
  * @param time double: blink duration
- * @return unsigned int:
+ * @param repeats int: number of time we should repeat the blinks
  */
-void blinkLed(unsigned char states, double time, )
+void blinkLed(unsigned char states, double time, int repeats)
 {
-    // TODO
+    double delay = time / repeats; /* delay between 2 blinks */
+    unsigned char tmp = states; /* this will save our states */
+
+    for (int i = 0; i < repeats; ++i) {
+        setLed(tmp); /* each iteration we change the state of the leds */
+        _delay_ms(delay); /* then we wait a little amount of time */
+
+        tmp = ~(tmp ^ ~states);
+    }
 }

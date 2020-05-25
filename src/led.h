@@ -1,6 +1,7 @@
 /**
  * Asuro development library
  * @author Gabriel Santamaria <gaby.santamaria@outlook.fr>
+ *
  * 18/05/2020
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +19,11 @@
 #define ASURO_LED_H
 
     /** LEDs states **/
-    #define ASURO_LED_INTERNAL_STATE_FRONT 16
-    #define ASURO_LED_INTERNAL_STATE_STATUS_RED 8
-    #define ASURO_LED_INTERNAL_STATE_STATUS_GREEN 4
-    #define ASURO_LED_INTERNAL_STATE_BACK_LEFT 2
-    #define ASURO_LED_INTERNAL_STATE_BACK_RIGHT 1
+    #define ASURO_LED_INTERNAL_STATE_FRONT (unsigned char) 16
+    #define ASURO_LED_INTERNAL_STATE_STATUS_RED (unsigned char) 8
+    #define ASURO_LED_INTERNAL_STATE_STATUS_GREEN (unsigned char) 4
+    #define ASURO_LED_INTERNAL_STATE_BACK_LEFT (unsigned char) 2
+    #define ASURO_LED_INTERNAL_STATE_BACK_RIGHT (unsigned char) 1
 
     /** LEDs state formatter **/
     #define LED_STATE(f, sr, sg, bl, br) f * 16 + sr * 8 + sg * 4 + bl * 2 + br
@@ -32,7 +33,12 @@
      * @param states unsigned char: formatted LEDs states
      */
     void setLed(unsigned char states);
+
     /**
-     * blinkLed
+     * Makes the LEDs blink during a certain amount of time
+     * @param states unsigned char: formatted LEDs states
+     * @param time double: blink duration
+     * @param repeats int: number of time we should repeat the blinks
      */
+    void blinkLed(unsigned char states, double time, int repeats);
 #endif //ASURO_LED_H

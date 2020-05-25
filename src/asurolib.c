@@ -2,6 +2,7 @@
  * Asuro development library
  * -- Asuro library functions
  * @author Gabriel Santamaria <gaby.santamaria@outlook.fr>
+ *
  * 18/05/2020
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,21 +24,5 @@
  * This has to be called before any program startup
  */
 void init(void) {
-    // TODO
-}
 
-/**
- * Waits during a certain amount of time
- * @param unsigned int time: time to wait before returning (in seconds)
- */
-void wait(unsigned int time)
-{
-    /* we firstly need to tell which source has to be used for the clock timer */
-    TCCR0 = 1; /* no prescaling */
-    TCNT0 = x; // we set the needed time in the TCNT0 register (Timer/Counter register)
-
-    unsigned int i = 0; /* this is our counter */
-
-    for (unsigned int i = 0; i <= time; i++)
-        while (!TOV0);
 }

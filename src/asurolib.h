@@ -1,6 +1,7 @@
 /**
  * Asuro development library
  * @author Gabriel Santamaria <gaby.santamaria@outlook.fr>
+ *
  * 18/05/2020
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,17 +30,11 @@
 
     /** Asuro library functions **/
 
-    /*
+    /**
      * Initialization function
      * This has to be called before any program startup
      */
     void init(void);
-
-    /**
-     * Returns the clock time
-     * @return unsigned int
-     */
-    unsigned int clock(void);
 
     #ifdef ASUROLIB_LEDS
         /** Asuro LED functions **/
