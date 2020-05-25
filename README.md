@@ -53,13 +53,13 @@ Here is the order in which `LED_STATE` takes LEDs:
 **Example 2:** make the LEDs blink during 5 seconds
 
 ```c
-#define ASUROLIB_LEDS // we'll be using the LED module from Asuro Library
+#define ASUROLIB_LEDS
 
 #include "asurolib.h"
 
 int main(void)
 {
-    init(); // ASURO initialization
+    init();
     
     blinkLed(
         LED_STATE(ON, ON, ON, ON, ON), /* LEDs that have "ON" state will blink */
